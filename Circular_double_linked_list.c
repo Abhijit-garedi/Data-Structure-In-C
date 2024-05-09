@@ -191,4 +191,12 @@
             printf("\n NOde deleted at Beginning..");
           }
      }
+     void cdll_delete_last()
+     {
+        node *temp;
+        if(start == NULL)
+        {
+            
+        }
+     }
     
