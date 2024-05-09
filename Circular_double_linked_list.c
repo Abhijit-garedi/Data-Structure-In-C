@@ -154,7 +154,13 @@
             newnode -> left = temp;
             newnode -> right = temp -> right;
             temp -> right -> left = newnode;
-            temp -> righst
+            temp -> right = newnode;
+            nodectr++;
+            printf("\ Node Inserted at Middle...");
         }
+        else
+       
+        printf("position %d of list is not a middle position", pos);
     }
+     }
     
