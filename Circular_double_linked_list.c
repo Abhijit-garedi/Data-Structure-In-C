@@ -73,3 +73,67 @@
     else 
     printf("\n List already exists..");
  }
+ void cdll_display_left_right()
+    {
+        node *temp;
+        temp = start;
+        if(start == NULL)
+             printf("\n Empty List:");
+             else
+             {
+                printf("\n The contents of List: ");
+                do
+                {
+                    temp = temp -> left;
+                    printf("\t%d, temp -> data");
+                } while (temp != start);
+                
+             }
+    }
+    void cdll_insert_beg()
+    {
+        node *newnode;
+        newnode = getnode();
+        nodectr++;
+        if(start == NULL)
+        {
+            start = newnode;
+            newnode -> left = start;
+            newnode -> right = start;
+        }
+        else
+        {
+            newnode -> left = start -> start;
+            newnode -> right = start;
+            start -> left -> right = newnode;
+            start -> left = newnode;
+            start = newnode;
+
+        }
+    }
+    void cdll_insert_end()
+    {
+        node *newnode, *temp;
+        newnode = getnode();
+        nodectr++;
+        if(start == NULL)
+        {
+            start = newnode;
+            newnode -> left = start;
+            newnode -> right = start;
+        }
+        else
+        {
+            newnode -> left = start -> left;
+            newnode -> right = start;
+            start -> left -> right = newnode;
+            start - left = newnode;
+        }
+        printf("\n Node Inserted at End");
+    }
+    void cdll_insert_mid()
+    {
+        node *newnode, *temp, *prev;
+        int pos, ctr = 1;
+        newnode = getnode();
+    }
