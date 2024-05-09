@@ -136,4 +136,25 @@
         node *newnode, *temp, *prev;
         int pos, ctr = 1;
         newnode = getnode();
+        printf("\n Enter the position: ");
+        scanf("%d", &pos);
+        if(pos - nodectr >= 2)
+        {
+            printf("\n position is out of range...");
+            return;
+        }
+        if(pos > 1 && pos <= nodectr)
+        {
+            temp = start;
+            while(ctr < pos - 1)
+            {
+                temp = temp -> right;
+                ctr++;   
+            }
+            newnode -> left = temp;
+            newnode -> right = temp -> right;
+            temp -> right -> left = newnode;
+            temp -> righst
+        }
     }
+    
