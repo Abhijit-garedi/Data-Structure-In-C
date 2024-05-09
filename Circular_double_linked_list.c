@@ -196,7 +196,7 @@
         node *temp;
         if(start == NULL)
         {
-            
+            printf(" \n No nodes exist..");
         }
      }
     
