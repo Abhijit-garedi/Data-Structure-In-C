@@ -162,5 +162,33 @@
        
         printf("position %d of list is not a middle position", pos);
     }
+     
+     void cdll_delete_beg()
+     {
+          node *temp;
+          if(start == NULL)
+          {
+            printf("\n No nodes exist..");
+            getch();
+            return;
+          }
+          else
+          {
+            nodectr--;
+            if(nodectr = 0)
+            {
+                free(start);
+                start = NULL;
+            }
+            else
+            {
+                temp = start;
+                start = start -> right;
+                temp -> left -> right = start;
+                start -> left = temp -> left;
+                free(temp);
+            }
+            printf("\n NOde deleted at Beginning..");
+          }
      }
     
