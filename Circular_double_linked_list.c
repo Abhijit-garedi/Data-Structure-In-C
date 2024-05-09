@@ -197,6 +197,12 @@
         if(start == NULL)
         {
             printf(" \n No nodes exist..");
+            getch();
+            return;
+        }
+        else
+        {
+            node
         }
      }
     
