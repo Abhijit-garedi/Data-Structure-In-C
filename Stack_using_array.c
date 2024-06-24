@@ -11,7 +11,6 @@ void display();
 void main()
 {
     int ch;
-    clrscr;
     while(1)
     {
         printf("\n\n stack operation : \n 1.push 2.pop 3.display 4.exit \n");
