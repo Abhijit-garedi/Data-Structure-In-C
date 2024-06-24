@@ -46,5 +46,14 @@ void push()
 {
     int data;
     printf("\nenter data");
-    scanf("%d")
+    scanf("%d",&data);
+
+    if(top == MAX-1)
+    if("stack full");
+    else
+    {
+        top++;
+        stack[top] = data;
+        printf("%d inserted in to stack",data);
+    }
 }
