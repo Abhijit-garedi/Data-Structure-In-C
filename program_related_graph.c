@@ -1,4 +1,4 @@
-// simple program related to graph
+// simple program related to graph 
 
  #include <stdio.h>
 #define MAX 10
@@ -6,6 +6,8 @@
 int stack[MAX];
 int top = -1;
 
+
+// push section code (line 11 to 19)
 void push(int value) {
     if (top == MAX - 1) {
         printf("Stack Overflow\n");
@@ -16,6 +18,8 @@ void push(int value) {
     }
 }
 
+
+// for pop ( 23-33)
 int pop() {
     if (top == -1) {
         printf("Stack Underflow\n");
@@ -28,6 +32,8 @@ int pop() {
     }
 }
 
+
+// for peek(37-44)
 int peek() {
     if (top == -1) {
         printf("Stack is empty\n");
@@ -37,6 +43,8 @@ int peek() {
     }
 }
 
+
+// for displaying( 48-57)
 void display() {
     if (top == -1) {
         printf("Stack is empty\n");
@@ -48,6 +56,8 @@ void display() {
     }
 }
 
+
+// last section for printing results 
 int main() {
     push(10);
     push(20);
