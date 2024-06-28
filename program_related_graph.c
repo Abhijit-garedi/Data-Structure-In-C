@@ -47,3 +47,14 @@ void display() {
         }
     }
 }
+
+int main() {
+    push(10);
+    push(20);
+    push(30);
+    display();
+    pop();
+    display();
+    printf("Top element is %d\n", peek());
+    return 0;
+}
