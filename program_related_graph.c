@@ -15,3 +15,35 @@ void push(int value) {
         printf("Pushed %d into the stack\n", value);
     }
 }
+
+int pop() {
+    if (top == -1) {
+        printf("Stack Underflow\n");
+        return -1;
+    } else {
+        int value = stack[top];
+        top--;
+        printf("Popped %d from the stack\n", value);
+        return value;
+    }
+}
+
+int peek() {
+    if (top == -1) {
+        printf("Stack is empty\n");
+        return -1;
+    } else {
+        return stack[top];
+    }
+}
+
+void display() {
+    if (top == -1) {
+        printf("Stack is empty\n");
+    } else {
+        printf("Stack elements are:\n");
+        for (int i = top; i >= 0; i--) {
+            printf("%d\n", stack[i]);
+        }
+    }
+}
