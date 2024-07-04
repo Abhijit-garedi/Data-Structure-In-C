@@ -51,4 +51,54 @@ void insert(Queue *q, char element) {
     if (q->front > q->rear) {
         q->front = q->rear = -1; // Reset queue
     }
+}  
+   void displayStatus(Queue *q) {
+    if (isEmpty(q)) {
+        printf("Queue is empty\n");
+    } else {
+        printf("Queue elements: ");
+        for (int i = q->front; i <= q->rear; i++) {
+            printf("%c ", q->queue[i]);
+        }
+        printf("\n");
+        printf("Number of elements: %d\n", q->rear - q->front + 1);
+    }
+}
+
+int main() {
+    Queue q;
+    initializeQueue(&q);
+    int choice;
+    char element;
+
+    do {
+        printf("\nQueue Operations Menu:\n");
+        printf("1. Insert an Element into QUEUE\n");
+        printf("2. Delete an Element from QUEUE\n");
+        printf("3. Display the status of QUEUE\n");
+        printf("4. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        switch (choice) {
+            case 1:
+                printf("Enter the element to insert: ");
+                scanf(" %c", &element);
+                insert(&q, element);
+                break;
+            case 2:
+                delete(&q);
+                break;
+            case 3:
+                displayStatus(&q);
+                break;
+            case 4:
+                printf("Exiting...\n");
+                break;
+            default:
+                printf("Invalid choice! Please try again.\n");
+        }
+    } while (choice != 4);
+
+    return 0;
 }
