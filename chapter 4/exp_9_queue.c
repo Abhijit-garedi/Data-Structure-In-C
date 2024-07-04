@@ -41,3 +41,14 @@ void insert(Queue *q, char element) {
     q->queue[++q->rear] = element;
     printf("Inserted %c\n", element);
 }
+  
+  void delete(Queue *q) {
+    if (isEmpty(q)) {
+        printf("Queue is empty!\n");
+        return;
+    }
+    printf("Deleted %c\n", q->queue[q->front++]);
+    if (q->front > q->rear) {
+        q->front = q->rear = -1; // Reset queue
+    }
+}
