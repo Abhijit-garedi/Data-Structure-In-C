@@ -45,3 +45,30 @@ char pop(struct Stack* stack) {
         return -1;
     return stack->array[stack->top--];
 }
+
+ char peek(struct Stack* stack) {
+    if (isEmpty(stack))
+        return -1;
+    return stack->array[stack->top];
+}
+
+// Function to check if the given character is operand
+int isOperand(char ch) {
+    return (isdigit(ch) || isalpha(ch));
+}
+
+// Function to return precedence of operators
+int precedence(char ch) {
+    switch (ch) {
+        case '+':
+        case '-':
+            return 1;
+        case '*':
+        case '/':
+        case '%':
+            return 2;
+        case '^':
+            return 3;
+    }
+    return -1;
+}
