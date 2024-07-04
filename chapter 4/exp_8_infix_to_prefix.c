@@ -3,6 +3,8 @@
 // with the operators: +, -, *, /, %(Remainder), ^(Power) and alphanumeric operands.
 
 
+ // not completely sure about that 
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
@@ -98,4 +100,26 @@ int precedence(char ch) {
             else
                 pop(stack);
         }
+         else { 
+            while (!isEmpty(stack) && precedence(exp[i]) <= precedence(peek(stack)))
+                exp[++k] = pop(stack);
+            push(stack, exp[i]);
+        }
+    }
+
+    
+    while (!isEmpty(stack))
+        exp[++k] = pop(stack);
+
+    exp[++k] = '\0';
+    printf("%s\n", exp);
+}
+
+int main() {
+    char exp[] = "a+b*(c^d-e)^(f+g*h)-i";
+    printf("Infix expression: %s\n", exp);
+    printf("Postfix expression: ");
+    infixToPostfix(exp);
+    return 0;
+}
         
